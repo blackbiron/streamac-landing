@@ -3,11 +3,15 @@ module.exports = function(grunt) {
     sass: {
       options: {
         implementation: require('node-sass'),
-        sourceMap: true
+        sourceMap: true,
+        includePaths: ['node_modules/']
       },
       dist: {
+        options: {
+          style: 'compressed'
+        },
         files: {
-          'build/application.css': 'source/stylesheets/application.sass'
+          'build/stylesheets/application.css': 'source/stylesheets/application.sass'
         }
       }
     },
